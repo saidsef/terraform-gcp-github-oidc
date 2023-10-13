@@ -9,7 +9,7 @@ provider "google-beta" {
 }
 
 module "github_oidc" {
-  source  = "app.terraform.io/saidsef/github-oidc/gcp"
+  source  = "saidsef/github-oidc/gcp"
   version = ">= 1"
 
   project_id  = var.project_id

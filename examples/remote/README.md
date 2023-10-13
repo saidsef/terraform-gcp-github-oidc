@@ -1,6 +1,10 @@
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | >= 4, < 5 |
+| <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | >= 4, < 5 |
 
 ## Providers
 
@@ -10,7 +14,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_github_oidc"></a> [github\_oidc](#module\_github\_oidc) | app.terraform.io/saidsef/github-oidc/gcp | >= 1 |
+| <a name="module_github_oidc"></a> [github\_oidc](#module\_github\_oidc) | saidsef/github-oidc/gcp | >= 1 |
 
 ## Resources
 

@@ -57,16 +57,17 @@ jobs:
         cd examples/complete
         terraform init -backend=false -upgrade -reconfigure
         terraform validate
-    # - name: Exmaple Remote Validate
-    #   run: |
-    #     cd examples/remote
-    #     terraform init -backend=false -upgrade -reconfigure
-    #     terraform validate
+    - name: Exmaple Remote Validate
+      run: |
+        cd examples/remote
+        terraform init -backend=false -upgrade -reconfigure
+        terraform validate
 
   tfsec:
     name: tfsec
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pull-requests: write
     needs: [validate]
     steps:
@@ -99,11 +100,13 @@ jobs:
       name: 'gcloud'
       run: |-
         gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}"
-        gcloud services list
+        gcloud services list --project `gcloud config get-value project`
 
   auto-approve:
     if: contains(github.event_name, 'pull_request')
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     needs: [validate, tfsec, caller-identity-check]
     steps:
     - name: Auto Approve PR
