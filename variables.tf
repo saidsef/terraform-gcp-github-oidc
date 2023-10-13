@@ -1,14 +1,12 @@
 variable "project_id" {
   type        = string
   description = "Project id to create Workload ID Pool"
-  nullable    = false
   sensitive   = false
 }
 
 variable "pool_id" {
   type        = string
   description = "Workload Identity Pool ID"
-  nullable    = false
   sensitive   = false
 }
 
@@ -79,12 +77,15 @@ variable "allowed_audiences" {
   sensitive   = false
 }
 
-variable "sa_mapping" {
-  type = map(object({
-    sa_name   = string
-    attribute = string
+variable "repositories" {
+  type = list(object({
+    org_name   = string
+    repository = string
   }))
-  description = "Service Account resource names and corresponding WIF provider attributes. If attribute is set to `*` all identities in the pool are granted access to SAs"
-  default     = {}
+  default = [{
+    org_name   = null
+    repository = null
+  }]
+  description = "List of repository organisation and branche names"
   sensitive   = false
 }

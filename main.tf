@@ -26,9 +26,11 @@ resource "google_iam_workload_identity_pool_provider" "provider" {
 }
 
 resource "google_service_account_iam_member" "sa" {
-  for_each = var.sa_mapping
+  provider = google-beta
 
-  service_account_id = each.value.sa_name
+  for_each = var.repositories
+
+  service_account_id = google_service_account.sa.name
   role               = "roles/iam.workloadIdentityUser"
-  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.pool.name}/${each.value.attribute}"
+  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.pool.name}/attribute.repository/${each.value.org_name}/${each.value.repository}"
 }
