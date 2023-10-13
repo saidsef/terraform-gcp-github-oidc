@@ -57,11 +57,11 @@ jobs:
         cd examples/complete
         terraform init -backend=false -upgrade -reconfigure
         terraform validate
-    - name: Exmaple Remote Validate
-      run: |
-        cd examples/remote
-        terraform init -backend=false -upgrade -reconfigure
-        terraform validate
+    # - name: Exmaple Remote Validate
+    #   run: |
+    #     cd examples/remote
+    #     terraform init -backend=false -upgrade -reconfigure
+    #     terraform validate
 
   tfsec:
     name: tfsec

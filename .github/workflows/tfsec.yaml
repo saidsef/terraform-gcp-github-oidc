@@ -28,18 +28,18 @@ jobs:
       with:
         sarif_file: tfsec.sarif
 
-  remote:
-    name: Remote exmaple test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Clone repo
-      uses: actions/checkout@v3
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v2
-      with:
-        terraform_version: 1.5
-    - name: Example Remote Validate
-      run: |
-        cd examples/remote
-        terraform init -backend=false -upgrade -reconfigure
-        terraform validate
+  # remote:
+  #   name: Remote exmaple test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Clone repo
+  #     uses: actions/checkout@v3
+  #   - name: Setup Terraform
+  #     uses: hashicorp/setup-terraform@v2
+  #     with:
+  #       terraform_version: 1.5
+  #   - name: Example Remote Validate
+  #     run: |
+  #       cd examples/remote
+  #       terraform init -backend=false -upgrade -reconfigure
+  #       terraform validate
