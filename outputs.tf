@@ -4,8 +4,32 @@ output "pool_name" {
   sensitive   = false
 }
 
+output "pool_id" {
+  description = "Pool ID"
+  value       = google_iam_workload_identity_pool.pool.id
+  sensitive   = false
+}
+
+output "pool_display_name" {
+  description = "Pool display name"
+  value       = google_iam_workload_identity_pool.pool.display_name
+  sensitive   = false
+}
+
 output "provider_name" {
   description = "Provider name"
   value       = google_iam_workload_identity_pool_provider.provider.name
+  sensitive   = false
+}
+
+output "provider_display_name" {
+  description = "Provider display name"
+  value       = google_iam_workload_identity_pool_provider.provider.display_name
+  sensitive   = false
+}
+
+output "provider_id" {
+  description = "Provider ID"
+  value       = google_iam_workload_identity_pool_provider.provider.id
   sensitive   = false
 }
