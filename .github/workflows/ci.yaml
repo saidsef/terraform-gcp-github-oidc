@@ -100,7 +100,7 @@ jobs:
       name: 'gcloud'
       run: |-
         gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}"
-        gcloud services list --project `gcloud config get-value project`
+        gcloud config get-value disable_usage_reporting
 
   auto-approve:
     if: contains(github.event_name, 'pull_request')

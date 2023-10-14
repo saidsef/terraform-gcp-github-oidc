@@ -28,7 +28,7 @@ resource "google_iam_workload_identity_pool_provider" "provider" {
 resource "google_service_account_iam_member" "sa" {
   provider = google-beta
 
-  for_each = var.repositories
+  for_each = zipmap([for repo in var.repositories : repo.org_name], var.repositories)
 
   service_account_id = google_service_account.sa.name
   role               = "roles/iam.workloadIdentityUser"
