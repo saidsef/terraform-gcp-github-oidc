@@ -96,6 +96,7 @@ jobs:
         create_credentials_file: 'true'
         workload_identity_provider: "${{ secrets.GOOGLE_PROVIDER }}"
         service_account: "${{ secrets.GOOGLE_SERVICE_ACCOUNT }}"
+        audience: "${{ secrets.GOOGLE_AUDIENCE }}"
     - id: 'gcloud'
       name: 'gcloud'
       run: |-
