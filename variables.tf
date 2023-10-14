@@ -10,44 +10,10 @@ variable "pool_id" {
   sensitive   = false
 }
 
-variable "pool_display_name" {
-  type        = string
-  description = "Workload Identity Pool display name"
-  default     = null
-  sensitive   = false
-}
-
-variable "pool_description" {
-  type        = string
-  description = "Workload Identity Pool description"
-  default     = "Workload Identity Pool managed by Terraform"
-  sensitive   = false
-}
-
-variable "provider_id" {
-  type        = string
-  description = "Workload Identity Pool Provider ID"
-  sensitive   = false
-}
-
 variable "issuer_uri" {
   type        = string
   description = "Workload Identity Pool Issuer URL"
   default     = "https://token.actions.githubusercontent.com"
-  sensitive   = false
-}
-
-variable "provider_display_name" {
-  type        = string
-  description = "Workload Identity Pool Provider display name"
-  default     = null
-  sensitive   = false
-}
-
-variable "provider_description" {
-  type        = string
-  description = "Workload Identity Pool Provider description"
-  default     = "Workload Identity Pool Provider managed by Terraform"
   sensitive   = false
 }
 

@@ -11,7 +11,6 @@ provider "google-beta" {
 module "github_oidc" {
   source = "../../"
 
-  project_id  = var.project_id
-  pool_id     = "github-action"
-  provider_id = "github-actions"
+  project_id = var.project_id
+  pool_id    = "github-action"
 }
