@@ -1,5 +1,5 @@
 # Terraform GCP GitHub OIDC Provider
-[![CI](https://github.com/saidsef/terraform-GCP-github-oidc/actions/workflows/ci.yaml/badge.svg)](#deployment--usage) ![GitHub issues](https://img.shields.io/github/issues-raw/saidsef/terraform-GCP-gitlab-oidc) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE.md)
+[![CI](https://github.com/saidsef/terraform-gcp-github-oidc/actions/workflows/ci.yaml/badge.svg)](#deployment--usage) ![GitHub issues](https://img.shields.io/github/issues-raw/saidsef/terraform-gcp-github-oidc) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE.md)
 
 This Terraform module enables you to configure GitHub Actions as an GCP IAM OIDC identity provider in GCP, which enables GitHub Actions to access resources within an GCP account(s) without requiring long-lived credentials to be stored as GitHub secrets.
 
@@ -13,13 +13,18 @@ This Terraform module enables you to configure GitHub Actions as an GCP IAM OIDC
 ## Deployment / Usage
 
 ```terraform
-provider "GCP" {
+provider "google" {
+  region  = var.region
+  project = var.project_id
+}
+
+provider "google-beta" {
   region  = var.region
   project = var.project_id
 }
 
 module "github_oidc" {
-  source  = "saidsef/github-oidc/GCP"
+  source  = "saidsef/github-oidc/gcp"
   version = ">= 1"
 
 }
