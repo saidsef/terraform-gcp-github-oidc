@@ -30,6 +30,8 @@ module "github_oidc" {
 }
 ```
 
+> **_NOTE:_** You can undelete a provider for up to 30 days after deletion. After 30 days, deletion is permanent. Until a provider is permanently deleted, you cannot reuse its name when creating a new provider.
+
 ## Provider Specifications and Requirements
 
 Please see [TERRAFORM.md](./TERRAFORM.md)

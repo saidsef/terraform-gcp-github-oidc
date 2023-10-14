@@ -33,3 +33,21 @@ output "provider_id" {
   value       = google_iam_workload_identity_pool_provider.provider.id
   sensitive   = false
 }
+
+output "service_account_id" {
+  description = "Service account ID"
+  value       = google_service_account.sa.account_id
+  sensitive   = false
+}
+
+output "service_account_display_name" {
+  description = "Service account display name"
+  value       = google_service_account.sa.display_name
+  sensitive   = false
+}
+
+output "service_account_name" {
+  description = "Service account display name"
+  value       = google_service_account.sa.name
+  sensitive   = false
+}
