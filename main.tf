@@ -3,7 +3,7 @@ resource "google_iam_workload_identity_pool" "pool" {
 
   description               = format("Workload Identity Pool for %s", var.pool_id)
   disabled                  = false
-  display_name              = format("Workload Identity Pool for %s", var.pool_id)
+  display_name              = format("Pool for %s", var.pool_id)
   project                   = var.project_id
   workload_identity_pool_id = var.pool_id
 }
