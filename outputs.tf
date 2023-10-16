@@ -22,15 +22,15 @@ output "provider_name" {
   sensitive   = false
 }
 
-output "provider_display_name" {
-  description = "Provider display name"
-  value       = google_iam_workload_identity_pool_provider.provider.display_name
-  sensitive   = false
-}
-
 output "provider_id" {
   description = "Provider ID"
   value       = google_iam_workload_identity_pool_provider.provider.id
+  sensitive   = false
+}
+
+output "provider_display_name" {
+  description = "Provider display name"
+  value       = google_iam_workload_identity_pool_provider.provider.display_name
   sensitive   = false
 }
 
@@ -47,7 +47,13 @@ output "service_account_display_name" {
 }
 
 output "service_account_name" {
-  description = "Service account display name"
+  description = "Service account name"
   value       = google_service_account.sa.name
+  sensitive   = false
+}
+
+output "service_account_email" {
+  description = "Service account email"
+  value       = google_service_account.sa.email
   sensitive   = false
 }
