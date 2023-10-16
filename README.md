@@ -49,3 +49,11 @@ Our latest and greatest source of `terraform-gcp-github-oidc` can be found on [G
 We would :heart: you to contribute by making a [pull request](https://github.com/saidsef/terraform-gcp-github-oidc/pulls).
 
 Please read the official [Contribution Guide](./CONTRIBUTING.md) for more information on how you can contribute.
+
+## Useful Links
+
+- [GitHub OpenID Connect Token](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect)
+- [Terraform Pool Provider](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider)
+- [Terraform Attribute Maping](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider#attribute_mapping)
+- [Terraform Token Specification](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials/workload-identity-tokens#token-specification)
+- [GCP Configuration](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials/gcp-configuration)
