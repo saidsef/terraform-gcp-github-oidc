@@ -13,9 +13,9 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v4
-    - uses: terraform-linters/setup-tflint@v3
+    - uses: terraform-linters/setup-tflint@v4
     - uses: pre-commit/action@v3.0.0
       with:
         extra_args: "-a"
@@ -34,7 +34,7 @@ jobs:
         tf-version: ["1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "latest"]
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
       with:
@@ -72,7 +72,7 @@ jobs:
     needs: [validate]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: tfsec
         uses: aquasecurity/tfsec-action@v1.0.3
         with:
@@ -87,6 +87,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
     - id: 'auth'
@@ -95,11 +96,15 @@ jobs:
       with:
         workload_identity_provider: "${{ secrets.GOOGLE_PROVIDER }}"
         service_account: "${{ secrets.GOOGLE_SERVICE_ACCOUNT }}"
+    - id: 'setup'
+      name: 'Setup Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v1'
+      with:
+        version: '>= 450.0.0'
     - id: 'gcloud'
-      name: 'gcloud'
+      name: 'gcloud CLI'
       run: |-
-        gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}"
-        gcloud services list --project `gcloud config get-value project`
+        gcloud info
 
   auto-approve:
     if: contains(github.event_name, 'pull_request')
