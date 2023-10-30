@@ -94,7 +94,6 @@ jobs:
       name: 'Authenticate to GCP'
       uses: 'google-github-actions/auth@v1'
       with:
-        create_credentials_file: 'true'
         workload_identity_provider: "${{ secrets.GOOGLE_PROVIDER }}"
         service_account: "${{ secrets.GOOGLE_SERVICE_ACCOUNT }}"
     - id: 'setup'
