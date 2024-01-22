@@ -14,4 +14,9 @@ module "github_oidc" {
 
   project_id = var.project_id
   pool_id    = "github-action"
+
+  repositories = [{
+    org_name   = "saidsef"
+    repository = "terraform-gcp-github-oidc"
+  }]
 }

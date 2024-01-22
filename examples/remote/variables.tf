@@ -7,4 +7,5 @@ variable "region" {
 variable "project_id" {
   type        = string
   description = "Google Cloud Project ID"
+  default     = "automations-services"
 }
