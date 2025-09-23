@@ -14,13 +14,13 @@ jobs:
     uses: saidsef/saidsef/.github/workflows/tf-validate.yaml@main
     with:
       start-version: '0' # minimum version (format: 1.0.x)
-      end-version: '10' # maximum version (format: 1.10.x)
+      end-version: '13' # maximum version (format: 1.13.x)
 
   opentofu:
     uses: saidsef/saidsef/.github/workflows/tf-validate.yaml@main
     with:
       start-version: '5' # minimum version (format: 1.5.x)
-      end-version: '8' # maximum version (format: 1.8.x)
+      end-version: '10' # maximum version (format: 1.10.x)
 
   tfsec:
     uses: saidsef/saidsef/.github/workflows/tf-security.yaml@main
