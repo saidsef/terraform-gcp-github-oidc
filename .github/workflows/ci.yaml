@@ -48,7 +48,7 @@ jobs:
         service_account: "${{ secrets.GOOGLE_SERVICE_ACCOUNT }}"
     - id: 'setup'
       name: 'Setup Cloud SDK'
-      uses: google-github-actions/setup-gcloud@v2
+      uses: google-github-actions/setup-gcloud@v3
       with:
         version: '>= 471.0.0'
     - id: 'gcloud'
